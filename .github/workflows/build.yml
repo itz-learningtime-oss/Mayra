@@ -20,12 +20,12 @@ jobs:
           distribution: 'temurin'
           java-version: '11'
 
-      - name: Install APKTool and Android Build Tools
+      - name: Install APKTool 3.0.3 and Android Build Tools
         run: |
           sudo apt-get update
-          # Install apktool
-          sudo apt-get install -y apktool
-          apktool --version
+          # Install APKTool 3.0.3 (matches decompile version, bundles aapt2)
+          curl -L -o apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar
+          java -jar apktool.jar --version
           # Install android-sdk build-tools for zipalign + apksigner
           sudo apt-get install -y android-sdk-platform-tools android-sdk-build-tools
           echo "ANDROID_HOME=/usr" >> $GITHUB_ENV
@@ -36,7 +36,7 @@ jobs:
 
       - name: Build unsigned APK
         run: |
-          apktool build -o output-unsigned.apk
+          java -jar apktool.jar build -o output-unsigned.apk
 
       - name: Generate signing key (PKCS8 + PEM cert)
         run: |
