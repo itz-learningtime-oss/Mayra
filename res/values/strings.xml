@@ -199,9 +199,9 @@ To fix this, you need to disable battery optimizations specifically for MYRA in 
     <string name="get_your_free_accesskey_from_the_picovoice_console"><u>Get your free AccessKey from the Picovoice Console</u></string>
     <string name="get_your_free_picovoice_api_key_you_can_paste_it_here">Get your free Picovoice API Key, you can paste it here.</string>
     <string name="google_api_key">YOUR_GOOGLE_API_KEY_HERE</string>
-    <string name="google_app_id">1:559790856787:android:d1da2e3721e868a3c9c4a6</string>
-    <string name="google_crash_reporting_api_key">YOUR_GOOGLE_API_KEY_HERE</string>
-    <string name="google_storage_bucket">myraai-bdb60.firebasestorage.app</string>
+    <string name="google_app_id">YOUR_GOOGLE_APP_ID_HERE</string>
+    <string name="google_crash_reporting_api_key">YOUR_GOOGLE_CRASH_REPORTING_API_KEY_HERE</string>
+    <string name="google_storage_bucket">YOUR_GOOGLE_STORAGE_BUCKET_HERE</string>
     <string name="grant_accessibility_permission">Grant Accessibility Permission</string>
     <string name="grant_default_assistant_permission_button">Set as Default Assistant</string>
     <string name="grant_permission_button">Grant Permission</string>
