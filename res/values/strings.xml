@@ -162,7 +162,7 @@ To fix this, you need to disable battery optimizations specifically for MYRA in 
     <string name="default_popup_window_title">Pop-Up Window</string>
     <string name="dialog_delete_account_message">Are you sure you want to delete your account? This action cannot be undone.</string>
     <string name="dialog_delete_account_title">Delete Account</string>
-    <string name="dialog_device_limit_title">Device Limit Reached</string>
+    <string name="dialog_device_limit_title">Limit reached</string>
     <string name="dialog_sign_out_message">Are you sure you want to sign out?</string>
     <string name="dialog_sign_out_title">Sign Out</string>
     <string name="dialogue_cancelled">Dialogue cancelled</string>
@@ -349,7 +349,7 @@ To fix this, you need to disable battery optimizations specifically for MYRA in 
     <string name="status_active">Active</string>
     <string name="status_authenticating">Authenticating…</string>
     <string name="status_bar_notification_info_overflow">999+</string>
-    <string name="status_checking_subscription">Checking subscription…</string>
+    <string name="status_checking_subscription">Checking…</string>
     <string name="status_launching">Launching…</string>
     <string name="status_loading_voice_engine">Loading voice engine…</string>
     <string name="status_opening_google">Opening Google…</string>
