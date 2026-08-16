@@ -27,3 +27,17 @@ Desktop.ini
 # Gradle (if any)
 .gradle/
 build/
+
+# Environment variables (NEVER commit real secrets)
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+
+# Local API key/config overrides
+local.properties
+google-services.json
+secrets.properties
+*.pem
+*.p12
