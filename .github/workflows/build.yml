@@ -40,9 +40,9 @@ jobs:
 
       - name: Generate signing key (PKCS8 + PEM cert)
         run: |
-          # Generate a private key in PKCS#8 format
+          # Generate a private key in PKCS#8 DER format (apksigner requires DER, not PEM text)
           openssl genrsa -out key.pem 2048
-          openssl pkcs8 -topk8 -inform PEM -outform PEM -in key.pem -out key.pk8 -nocrypt
+          openssl pkcs8 -topk8 -inform PEM -outform DER -in key.pem -out key.pk8 -nocrypt
           # Generate a self-signed certificate
           openssl req -new -x509 -key key.pem -out cert.x509.pem -days 10000 -subj "/CN=MYRA/O=MYRA Dev/C=US"
 
