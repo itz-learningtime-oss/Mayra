@@ -1,0 +1,18 @@
+.class public abstract LD70;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public a:Ljava/util/ArrayList;
+
+
+# virtual methods
+.method public abstract a(Ly5;)Z
+.end method
+
+.method public abstract b()LD70;
+.end method
+
+.method public abstract c(Ly5;)Z
+.end method

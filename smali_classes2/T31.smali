@@ -1,0 +1,22 @@
+.class public final LT31;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# virtual methods
+.method public final serializer()LNi0;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "LNi0;"
+        }
+    .end annotation
+
+    .line 1
+    sget-object v0, LS31;->a:LS31;
+
+    .line 2
+    .line 3
+    return-object v0
+.end method

@@ -1,0 +1,29 @@
+# APKTool build artifacts
+*.apk
+*.apks
+*.zip
+*.aligned
+*.signed
+
+# Signing keys (NEVER commit)
+*.keystore
+*.jks
+*.key
+*keystore*
+*keepsk1*
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+
+# OS
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Gradle (if any)
+.gradle/
+build/

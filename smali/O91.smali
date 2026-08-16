@@ -1,0 +1,51 @@
+.class public abstract LO91;
+.super Ljava/lang/Object;
+.source "SourceFile"
+
+
+# instance fields
+.field public a:I
+
+.field public b:LO91;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 2
+    .line 3
+    .line 4
+    invoke-static {}, LV71;->k()LQ71;
+
+    .line 5
+    .line 6
+    .line 7
+    move-result-object v0
+
+    .line 8
+    invoke-virtual {v0}, LQ71;->d()I
+
+    .line 9
+    .line 10
+    .line 11
+    move-result v0
+
+    .line 12
+    iput v0, p0, LO91;->a:I
+
+    .line 13
+    .line 14
+    return-void
+.end method
+
+
+# virtual methods
+.method public abstract a(LO91;)V
+.end method
+
+.method public abstract b()LO91;
+.end method
