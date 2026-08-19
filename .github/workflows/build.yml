@@ -1,72 +1,65 @@
-name: Build APK
+name: Optimized Fast APK Build
 
 on:
   push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout Code
         uses: actions/checkout@v4
 
-      - name: Set up JDK 11
+      - name: Set up Java JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '11'
+          distribution: 'zulu'
+          java-version: '17'
 
-      - name: Install APKTool 3.0.3 and Android Build Tools
+      - name: Install Essential Utilities Only
         run: |
-          sudo apt-get update
-          # Install APKTool 3.0.3 (matches decompile version, bundles aapt2)
-          curl -L -o apktool.jar https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar
-          java -jar apktool.jar --version
-          # Install android-sdk build-tools for zipalign + apksigner
-          sudo apt-get install -y android-sdk-platform-tools android-sdk-build-tools
-          echo "ANDROID_HOME=/usr" >> $GITHUB_ENV
-          # Find the build-tools version
-          BT_DIR=$(ls /usr/lib/android-sdk/build-tools/ | sort -V | tail -1)
-          echo "BUILD_TOOLS_VERSION=$BT_DIR" >> $GITHUB_ENV
-          echo "Build tools version: $BT_DIR"
+          sudo apt-get update -o Acquire::Retries=3 -o Acquire::http::Timeout="10"
+          sudo apt-get install -y --no-install-recommends wget zipalign
 
-      - name: Build unsigned APK
-        run: |
-          java -jar apktool.jar build -o output-unsigned.apk
+      - name: Cache APKTool
+        id: cache-apktool
+        uses: actions/cache@v4
+        with:
+          path: |
+            /usr/local/bin/apktool
+            /usr/local/bin/apktool.jar
+            ~/.local/share/apktool
+          key: ${{ runner.os }}-apktool-v3.0.3
 
-      - name: Generate signing key (PKCS8 + PEM cert)
+      - name: Download APKTool (if cache miss)
+        if: steps.cache-apktool.outputs.cache-hit != 'true'
         run: |
-          # Generate a private key in PKCS#8 DER format (apksigner requires DER, not PEM text)
-          openssl genrsa -out key.pem 2048
-          openssl pkcs8 -topk8 -inform PEM -outform DER -in key.pem -out key.pk8 -nocrypt
-          # Generate a self-signed certificate
-          openssl req -new -x509 -key key.pem -out cert.x509.pem -days 10000 -subj "/CN=MYRA/O=MYRA Dev/C=US"
+          sudo wget https://raw.githubusercontent.com/iBotPeaches/Apktool/master/scripts/linux/apktool -O /usr/local/bin/apktool
+          sudo wget https://github.com/iBotPeaches/Apktool/releases/download/v3.0.3/apktool_3.0.3.jar -O /usr/local/bin/apktool.jar
+          sudo chmod +x /usr/local/bin/apktool /usr/local/bin/apktool.jar
 
-      - name: Zipalign
+      - name: Build APK with Apktool
         run: |
-          /usr/lib/android-sdk/build-tools/${{ env.BUILD_TOOLS_VERSION }}/zipalign -v 4 output-unsigned.apk output-aligned.apk
+          apktool b . -o myra_patched_unaligned.apk -q --no-crunch --use-aapt2
+
+      - name: Align APK
+        run: |
+          zipalign -p -f 4 myra_patched_unaligned.apk myra_patched.apk
 
       - name: Sign APK
-        run: |
-          /usr/lib/android-sdk/build-tools/${{ env.BUILD_TOOLS_VERSION }}/apksigner sign --key key.pk8 --cert cert.x509.pem output-aligned.apk
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: .
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
 
-      - name: Verify APK
-        run: |
-          /usr/lib/android-sdk/build-tools/${{ env.BUILD_TOOLS_VERSION }}/apksigner verify output-aligned.apk
-          echo "APK signed and verified successfully!"
-
-      - name: Prepare final APK
-        run: |
-          mv output-aligned.apk myra-app.apk
-          ls -lh myra-app.apk
-
-      - name: Upload APK artifact
+      - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: myra-apk
-          path: myra-app.apk
-          retention-days: 30
+          name: myra-patched-apk
+          path: myra_patched.apk
