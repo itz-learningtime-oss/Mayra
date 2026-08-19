@@ -435,9 +435,12 @@
 
 # virtual methods
 .method public final e()V
-    .locals 4
+    .locals 0
 
     .line 1
+    return-void
+
+    .line 2
     sget-boolean v0, Lcom/myra/voice/MyApplication;->S:Z
 
     .line 2

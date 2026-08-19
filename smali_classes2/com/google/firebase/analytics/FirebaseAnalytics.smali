@@ -163,6 +163,12 @@
 
 # virtual methods
 .method public final a(Landroid/os/Bundle;Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public final a_stub_removed(Landroid/os/Bundle;Ljava/lang/String;)V
     .locals 1
 
     .line 1

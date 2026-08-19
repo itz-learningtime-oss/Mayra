@@ -301,8 +301,6 @@
             </intent-filter>
         </activity>
         <provider android:authorities="com.myra.voice.androidx-startup" android:exported="false" android:name="androidx.startup.InitializationProvider">
-            <meta-data android:name="com.razorpay.RazorpayInitializer" android:value="androidx.startup"/>
-            <meta-data android:name="com.razorpay.CoreInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.emoji2.text.EmojiCompatInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.lifecycle.ProcessLifecycleInitializer" android:value="androidx.startup"/>
             <meta-data android:name="androidx.profileinstaller.ProfileInstallerInitializer" android:value="androidx.startup"/>
