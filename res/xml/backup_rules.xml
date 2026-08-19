@@ -5,4 +5,19 @@
     <exclude domain="database" path="myra_ai_notification_db" />
     <exclude domain="database" path="myra_ai_notification_db-wal" />
     <exclude domain="database" path="myra_ai_notification_db-shm" />
+    <exclude domain="database" path="myra_conversation_memory_db" />
+    <exclude domain="database" path="myra_conversation_memory_db-wal" />
+    <exclude domain="database" path="myra_conversation_memory_db-shm" />
+    <exclude domain="database" path="blurr_memory_database" />
+    <exclude domain="database" path="blurr_memory_database-wal" />
+    <exclude domain="database" path="blurr_memory_database-shm" />
+    <exclude domain="database" path="myra_mission_db" />
+    <exclude domain="database" path="myra_mission_db-wal" />
+    <exclude domain="database" path="myra_mission_db-shm" />
+    <exclude domain="database" path="myra_ai_world_model_db" />
+    <exclude domain="database" path="myra_ai_world_model_db-wal" />
+    <exclude domain="database" path="myra_ai_world_model_db-shm" />
+    <exclude domain="database" path="myra_maps_db" />
+    <exclude domain="database" path="myra_maps_db-wal" />
+    <exclude domain="database" path="myra_maps_db-shm" />
 </full-backup-content>

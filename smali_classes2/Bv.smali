@@ -595,7 +595,7 @@
 
     .line 199
     .line 200
-    const-string v2, "Understood - I\'m MYRA, created by Vikash (codeninjavik). How can I help you?"
+    const-string v2, "Understood - I\'m MYRA, created by Vishesh (codeninjavik). How can I help you?"
 
     .line 201
     .line 202

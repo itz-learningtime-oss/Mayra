@@ -146,18 +146,13 @@
 .end method
 
 .method public static b()Lcom/google/firebase/firestore/FirebaseFirestore;
-    .locals 7
+    .locals 1
 
-    .line 1
+    const/4 v0, 0x0
+
+    return-object v0
+
     invoke-static {}, LKY;->d()LKY;
-
-    .line 2
-    .line 3
-    .line 4
-    move-result-object v0
-
-    .line 5
-    const-string v1, "(default)"
 
     .line 6
     .line 7
