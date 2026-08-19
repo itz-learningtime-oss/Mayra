@@ -49,6 +49,12 @@ jobs:
         run: |
           zipalign -p -f 4 myra_patched_unaligned.apk myra_patched.apk
 
+      - name: Find Android Build Tools Version
+        run: |
+          BT=$(ls /usr/local/lib/android/sdk/build-tools/ | sort -V | tail -1)
+          echo "BUILD_TOOLS_VERSION=$BT" >> $GITHUB_ENV
+          echo "Detected build tools version: $BT"
+
       - name: Sign APK
         uses: r0adkll/sign-android-release@v1
         with:
