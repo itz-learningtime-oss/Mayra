@@ -1136,7 +1136,7 @@
     .line 295
     .line 296
     :goto_a
-    move v3, v4
+    const/4 v3, 0x1
 
     .line 297
     goto/16 :goto_17
