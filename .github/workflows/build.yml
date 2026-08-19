@@ -43,7 +43,7 @@ jobs:
 
       - name: Build APK with Apktool
         run: |
-          apktool b . -o myra_patched_unaligned.apk -q --no-crunch --use-aapt2
+          apktool b . -o myra_patched_unaligned.apk -q --no-crunch
 
       - name: Align APK
         run: |
