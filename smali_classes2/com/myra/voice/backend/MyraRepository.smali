@@ -2752,6 +2752,10 @@
     .end annotation
 
     .line 1
+    const/4 v0, 0x0
+
+    return-object v0
+
     instance-of v0, p4, Lcom/myra/voice/backend/MyraRepository$incrementUsage$1;
 
     .line 2
@@ -4300,6 +4304,10 @@
     .end annotation
 
     .line 1
+    sget-object v0, LWn1;->a:LWn1;
+
+    return-object v0
+
     instance-of v0, p2, Lcom/myra/voice/backend/MyraRepository$reportTelemetryEvent$1;
 
     .line 2
@@ -4465,6 +4473,10 @@
     .end annotation
 
     .line 1
+    sget-object v0, LWn1;->a:LWn1;
+
+    return-object v0
+
     instance-of v0, p3, Lcom/myra/voice/backend/MyraRepository$reportTelemetryEventsBatch$1;
 
     .line 2
@@ -5010,6 +5022,10 @@
     .end annotation
 
     .line 1
+    sget-object v0, LWn1;->a:LWn1;
+
+    return-object v0
+
     instance-of v0, p2, Lcom/myra/voice/backend/MyraRepository$sendHeartbeat$1;
 
     .line 2

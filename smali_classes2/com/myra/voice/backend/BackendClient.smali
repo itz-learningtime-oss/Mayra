@@ -119,7 +119,7 @@
     .locals 5
 
     .line 1
-    invoke-direct {p0}, Lcom/myra/voice/backend/BackendClient;->normalizedBaseUrl()Ljava/lang/String;
+    invoke-direct {p0, p1}, Lcom/myra/voice/backend/BackendClient;->normalizedBaseUrl(Landroid/content/Context;)Ljava/lang/String;
 
     .line 2
     .line 3
@@ -346,11 +346,25 @@
     throw p1
 .end method
 
-.method private final normalizedBaseUrl()Ljava/lang/String;
+.method private final normalizedBaseUrl(Landroid/content/Context;)Ljava/lang/String;
     .locals 3
 
     .line 1
-    const-string v0, "https://codeninjavik.in/"
+    const-string v0, "BlurrSettings"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v1, "backend_base_url"
+
+    const-string v2, "https://codeninjavik.in/"
+
+    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v0
 
     .line 2
     .line 3
