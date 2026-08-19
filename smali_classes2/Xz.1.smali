@@ -6406,7 +6406,7 @@
 
     .line 2963
     .line 2964
-    invoke-static/range {v23 .. v45}, Lti1;->b(Ljava/lang/String;LXy0;JJLH20;Lj20;JLgh1;LTg1;JIZIILVi1;LSA;III)V
+    nop
 
     .line 2965
     .line 2966

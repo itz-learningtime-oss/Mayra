@@ -360,7 +360,7 @@
 
     const-string v1, "backend_base_url"
 
-    const-string v2, "https://codeninjavik.in/"
+    const-string v2, "https://127.0.0.1/"
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 

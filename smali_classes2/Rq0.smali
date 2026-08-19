@@ -32,7 +32,7 @@
     .locals 4
 
     .line 1
-    const-string v0, "https://codeninjavik.in/login?redirect=myra://auth"
+    const-string v0, "https://127.0.0.1/login?redirect=myra://auth"
 
     .line 2
     .line 3
@@ -57,7 +57,7 @@
 
     .line 13
     .line 14
-    const-string v0, "https://codeninjavik.in/signup?redirect=myra://auth"
+    const-string v0, "https://127.0.0.1/signup?redirect=myra://auth"
 
     .line 15
     .line 16

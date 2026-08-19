@@ -1096,7 +1096,7 @@
 
     .line 14
     :cond_0
-    const-string v0, "Join me on MYRA! \ud83c\udf99\ufe0f\nDownload: https://codeninjavik.in/download?ref="
+    const-string v0, "Join me on MYRA! \ud83c\udf99\ufe0f\nDownload: https://127.0.0.1/download?ref="
 
     .line 15
     .line 16
@@ -1121,7 +1121,7 @@
     .line 25
     :cond_1
     :goto_0
-    const-string p1, "Join me on MYRA! \ud83c\udf99\ufe0f\nDownload: https://codeninjavik.in/download"
+    const-string p1, "Join me on MYRA! \ud83c\udf99\ufe0f\nDownload: https://127.0.0.1/download"
 
     .line 26
     .line 27

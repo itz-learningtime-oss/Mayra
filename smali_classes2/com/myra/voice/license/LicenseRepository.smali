@@ -14,7 +14,7 @@
 # static fields
 .field public static final $stable:I
 
-.field public static final BASE_URL:Ljava/lang/String; = "https://codeninjavik.in/"
+.field public static final BASE_URL:Ljava/lang/String; = "https://127.0.0.1/"
     .annotation runtime Ljava/lang/Deprecated;
     .end annotation
 .end field
@@ -108,7 +108,7 @@
     .line 28
     .line 29
     .line 30
-    const-string v0, "https://codeninjavik.in/"
+    const-string v0, "https://127.0.0.1/"
 
     .line 31
     .line 32

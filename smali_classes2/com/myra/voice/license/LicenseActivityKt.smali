@@ -3969,7 +3969,7 @@
 
     .line 2
     .line 3
-    const-string v1, "https://codeninjavik.in"
+    const-string v1, "https://127.0.0.1"
 
     .line 4
     .line 5

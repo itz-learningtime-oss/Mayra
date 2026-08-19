@@ -265,7 +265,7 @@
 
     .line 109
     :cond_6
-    const-string v1, "Try MYRA, my AI voice assistant! \ud83c\udf99\ufe0f\nDownload: https://codeninjavik.in/download?ref="
+    const-string v1, "Try MYRA, my AI voice assistant! \ud83c\udf99\ufe0f\nDownload: https://127.0.0.1/download?ref="
 
     .line 110
     .line 111
