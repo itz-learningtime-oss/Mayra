@@ -2144,7 +2144,7 @@
     .line 64
     :cond_2
     :goto_0
-    if-eqz v2, :cond_4
+    goto/16 :cond_3
 
     .line 65
     .line 66
