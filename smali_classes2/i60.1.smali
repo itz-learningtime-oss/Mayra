@@ -2494,9 +2494,11 @@
     :cond_7
     const-string v5, "gemini"
 
+    const-string v7, "poolside"
+
     .line 199
     .line 200
-    filled-new-array {v11, v10, v5, v9}, [Ljava/lang/String;
+    filled-new-array {v11, v10, v5, v9, v7}, [Ljava/lang/String;
 
     .line 201
     .line 202
@@ -2810,7 +2812,7 @@
     goto :goto_3
 
     .line 346
-    :cond_f
+:cond_f
     :goto_4
     invoke-virtual {v3, v8}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -2819,7 +2821,30 @@
     .line 349
     goto :goto_3
 
-    .line 350
+    :sswitch_4
+    const-string v13, "poolside"
+
+    invoke-virtual {v12, v13}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_ps2
+
+    goto :goto_3
+
+    :cond_ps2
+    invoke-static {v0}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, LQa1;->P(Ljava/lang/CharSequence;)Z
+
+    move-result v12
+
+    if-nez v12, :cond_b
+
+    goto :goto_4
+
     :cond_10
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -3857,6 +3882,7 @@
         0x308c0d -> :sswitch_2
         0x25847564 -> :sswitch_1
         0x49685e13 -> :sswitch_0
+        0x25e90773 -> :sswitch_4
     .end sparse-switch
 .end method
 

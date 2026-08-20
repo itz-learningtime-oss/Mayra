@@ -286,6 +286,8 @@
     <id name="editUserEmail" />
     <id name="editUserName" />
     <id name="editWakeWordKey" />
+    <id name="editPoolsideApiKeys" />
+    <id name="editPoolsideModel" />
     <id name="edit_query" />
     <id name="edit_text_id" />
     <id name="elastic" />
@@ -620,6 +622,7 @@
     <id name="radioGroq" />
     <id name="radioGroupModelType" />
     <id name="radioOpenRouter" />
+    <id name="radioPoolside" />
     <id name="ratio" />
     <id name="recentTripsContainer" />
     <id name="rectangles" />

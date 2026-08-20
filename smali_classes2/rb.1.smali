@@ -268,12 +268,30 @@
     :cond_4
     invoke-static {p0}, LMd;->T(Landroid/content/Context;)Ljava/lang/String;
 
-    .line 96
-    .line 97
-    .line 98
+    .line 99
     move-result-object p0
 
-    .line 99
+    .line 100
+    goto :goto_1
+
+    :sswitch_4
+    const-string v6, "poolside"
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-nez v5, :cond_ps1
+
+    goto :goto_0
+
+    :cond_ps1
+    invoke-static {p0}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object p0
+
+    goto :goto_1
+
     :goto_1
     invoke-static {p0}, Lrb;->c(Ljava/lang/String;)Ljava/util/ArrayList;
 
@@ -564,6 +582,7 @@
         0x308c0d -> :sswitch_2
         0x25847564 -> :sswitch_1
         0x49685e13 -> :sswitch_0
+        0x25e90773 -> :sswitch_4
     .end sparse-switch
 .end method
 

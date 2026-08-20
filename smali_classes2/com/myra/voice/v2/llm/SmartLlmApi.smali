@@ -116,7 +116,9 @@
 
     const-string v1, "gemini"
 
-    filled-new-array {p3, v0, v1, p2}, [Ljava/lang/String;
+    const-string v2, "poolside"
+
+    filled-new-array {p3, v0, v1, p2, v2}, [Ljava/lang/String;
 
     move-result-object p2
 
@@ -251,7 +253,7 @@
 
     .line 14
     .line 15
-    const v1, 0x49685e13
+const v1, 0x49685e13
 
     .line 16
     .line 17
@@ -259,8 +261,42 @@
     if-eq v0, v1, :cond_0
 
     .line 19
+    const v1, 0x25e90773
+
+    if-eq v0, v1, :cond_6
+
     .line 20
+    .line 21
     goto :goto_0
+
+    .line 22
+    :cond_6
+    const-string v0, "poolside"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_7
+
+    goto :goto_0
+
+    :cond_7
+    new-instance p1, Lcom/myra/voice/v2/llm/PoolsideLlmApi;
+
+    iget-object v0, p0, Lcom/myra/voice/v2/llm/SmartLlmApi;->context:Landroid/content/Context;
+
+    invoke-static {v0}, LMd;->R(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v2
+
+    iget-object v0, p0, Lcom/myra/voice/v2/llm/SmartLlmApi;->context:Landroid/content/Context;
+
+    iget v1, p0, Lcom/myra/voice/v2/llm/SmartLlmApi;->maxRetryPerProvider:I
+
+    invoke-direct {p1, v2, v0, v1}, Lcom/myra/voice/v2/llm/PoolsideLlmApi;-><init>(Ljava/lang/String;Landroid/content/Context;I)V
+
+    return-object p1
 
     .line 21
     :cond_0
@@ -588,6 +624,32 @@
     goto :goto_1
 
     .line 75
+    :sswitch_4
+    const-string v0, "poolside"
+
+    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_ps1
+
+    goto :goto_0
+
+    :cond_ps1
+    iget-object p1, p0, Lcom/myra/voice/v2/llm/SmartLlmApi;->context:Landroid/content/Context;
+
+    invoke-static {p1}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object p1
+
+    invoke-static {p1}, LQa1;->P(Ljava/lang/CharSequence;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_3
+
+    goto :goto_1
+
     :sswitch_3
     const-string v0, "gemini"
 
@@ -627,6 +689,7 @@
         0x308c0d -> :sswitch_2
         0x25847564 -> :sswitch_1
         0x49685e13 -> :sswitch_0
+        0x25e90773 -> :sswitch_4
     .end sparse-switch
 .end method
 

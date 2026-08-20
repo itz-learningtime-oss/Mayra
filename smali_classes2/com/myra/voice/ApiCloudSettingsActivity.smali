@@ -24,6 +24,12 @@
 
 .field public f:Landroid/widget/RadioButton;
 
+.field public g:Landroid/widget/RadioButton;
+
+.field public h:Landroid/widget/EditText;
+
+.field public i:Landroid/widget/EditText;
+
 
 # direct methods
 .method public constructor <init>()V
@@ -244,6 +250,47 @@
 
     .line 106
     .line 107
+    const p1, 0x7f0a0388
+
+    .line 108
+    .line 109
+    .line 110
+    invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
+
+    .line 111
+    .line 112
+    .line 113
+    move-result-object p1
+
+    .line 114
+    check-cast p1, Landroid/widget/RadioButton;
+
+    .line 115
+    iput-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->g:Landroid/widget/RadioButton;
+
+    .line 116
+    const p1, 0x7f0a0386
+
+    invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/EditText;
+
+    iput-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->h:Landroid/widget/EditText;
+
+    const p1, 0x7f0a0387
+
+    invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/EditText;
+
+    iput-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->i:Landroid/widget/EditText;
+
+    .line 106
+    .line 107
     const p1, 0x7f0a0070
 
     .line 108
@@ -359,8 +406,33 @@
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 166
+    iget-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->h:Landroid/widget/EditText;
+
     .line 167
+    if-eqz p1, :cond_ps
+
     .line 168
+    invoke-static {p0}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_ps
+    iget-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->i:Landroid/widget/EditText;
+
+    if-eqz p1, :cond_ps2
+
+    invoke-static {p0}, LMd;->R(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :cond_ps2
+    .line 168
+    .line 169
+    .line 170
     const-string p1, "BlurrSettings"
 
     .line 169
@@ -429,7 +501,7 @@
 
     .line 200
     .line 201
-    const v3, 0x49685e13
+const v3, 0x49685e13
 
     .line 202
     .line 203
@@ -437,10 +509,41 @@
     if-eq v1, v3, :cond_1
 
     .line 205
+    const v3, 0x25e90773
+
+    if-eq v1, v3, :cond_ps3
+
     .line 206
+    .line 207
     goto :goto_0
 
-    .line 207
+    :cond_ps3
+    const-string v1, "poolside"
+
+    invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_ps4
+
+    goto :goto_0
+
+    :cond_ps4
+    iget-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->g:Landroid/widget/RadioButton;
+
+    if-eqz p1, :cond_ps5
+
+    invoke-virtual {p1, v4}, Landroid/widget/CompoundButton;->setChecked(Z)V
+
+    goto :goto_1
+
+    :cond_ps5
+    const-string p1, "radioPoolside"
+
+    invoke-static {p1}, Lgg0;->k0(Ljava/lang/String;)V
+
+    throw v0
+
     :cond_1
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

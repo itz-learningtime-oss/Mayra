@@ -1045,8 +1045,135 @@
     invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     .line 497
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->h:Landroid/widget/EditText;
+
     .line 498
+    const/4 v3, 0x0
+
+    if-eqz v2, :cond_ps
+
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-static {v2, v4}, Lgg0;->B(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v4
+
+    invoke-static {v2}, LQa1;->p0(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v5
+
+    if-lez v5, :cond_ps
+
+    goto :goto_ps
+
+    :cond_ps
+    move-object v2, v3
+
+    :goto_ps
+    if-eqz v2, :cond_ps2
+
+    invoke-static {v2}, Lb7;->F(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v2
+
+    goto :goto_ps2
+
+    :cond_ps2
+    sget-object v2, LMT;->a:LMT;
+
+    :goto_ps2
+    invoke-virtual {v1}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v3
+
+    sget-object v4, LqC;->b:LGx;
+
+    invoke-virtual {v4, v3}, LGx;->l(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    invoke-static {v2}, Loy;->l0(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Ljava/lang/String;
+
+    if-nez v2, :cond_ps3
+
+    const-string v2, ""
+
+    :cond_ps3
+    const-string v4, "keys_poolside"
+
+    invoke-interface {v3, v4, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
+
     .line 499
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->i:Landroid/widget/EditText;
+
+    if-eqz v2, :cond_ps4
+
+    invoke-virtual {v2}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Ljava/lang/String;->length()I
+
+    move-result v3
+
+    if-lez v3, :cond_ps5
+
+    const-string v3, "BlurrSettings"
+
+    const/4 v4, 0x0
+
+    invoke-virtual {v1, v3, v4}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    const-string v4, "runtime_poolside_model"
+
+    invoke-interface {v3, v4, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v3
+
+    invoke-interface {v3}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    :cond_ps5
+    :cond_ps4
+
+    .line 500
     iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->T:Landroid/widget/RadioButton;
 
     .line 500
@@ -1134,6 +1261,21 @@
 
     .line 539
     :cond_d
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->g:Landroid/widget/RadioButton;
+
+    if-eqz v2, :cond_ps6
+
+    invoke-virtual {v2}, Landroid/widget/CompoundButton;->isChecked()Z
+
+    move-result v2
+
+    if-nez v2, :cond_ps6
+
+    const-string v2, "poolside"
+
+    goto :goto_9
+
+    :cond_ps6
     const-string v2, "groq"
 
     .line 540

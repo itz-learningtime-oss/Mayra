@@ -4176,6 +4176,79 @@
     return-object p0
 .end method
 
+.method public static P(Landroid/content/Context;)Ljava/lang/String;
+    .locals 2
+
+    const-string v0, "context"
+
+    invoke-static {p0, v0}, Lgg0;->B(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "poolside"
+
+    const-string v1, "runtime_poolside_api_keys"
+
+    invoke-static {p0, v0, v1}, LMd;->e0(Landroid/content/Context;Ljava/lang/String;Ljava/lang/String;)V
+
+    new-instance v1, LqC;
+
+    invoke-direct {v1, p0}, LqC;-><init>(Landroid/content/Context;)V
+
+    invoke-virtual {v1, v0}, LqC;->b(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object p0
+
+    invoke-static {p0}, Loy;->l0(Ljava/util/List;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    check-cast p0, Ljava/lang/String;
+
+    if-nez p0, :cond_0
+
+    const-string p0, ""
+
+    :cond_0
+    return-object p0
+.end method
+
+.method public static R(Landroid/content/Context;)Ljava/lang/String;
+    .locals 3
+
+    const-string v0, "context"
+
+    invoke-static {p0, v0}, Lgg0;->B(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {p0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    move-object p0, v0
+
+    :goto_0
+    const-string v0, "BlurrSettings"
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p0, v0, v1}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+
+    move-result-object v0
+
+    const-string v2, "runtime_poolside_model"
+
+    const-string v1, "meta-llama/llama-3.3-70b-instruct"
+
+    invoke-interface {v0, v2, v1}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static Y(Landroid/content/Context;)Landroid/content/SharedPreferences;
     .locals 2
 
