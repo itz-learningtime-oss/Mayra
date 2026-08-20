@@ -884,7 +884,7 @@
     move-result v0
 
     .line 262
-    if-eqz v0, :cond_12
+    goto :cond_12
 
     .line 263
     .line 264
@@ -5811,7 +5811,7 @@
     move-result v3
 
     .line 20
-    if-eqz v3, :cond_1
+    nop
 
     .line 21
     .line 22
