@@ -249,26 +249,17 @@
     iput-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->T:Landroid/widget/RadioButton;
 
     .line 106
-    .line 107
     const p1, 0x7f0a0388
 
-    .line 108
-    .line 109
-    .line 110
+    .line 107
     invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
 
-    .line 111
-    .line 112
-    .line 113
     move-result-object p1
 
-    .line 114
     check-cast p1, Landroid/widget/RadioButton;
 
-    .line 115
     iput-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->g:Landroid/widget/RadioButton;
 
-    .line 116
     const p1, 0x7f0a0386
 
     invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
@@ -408,20 +399,18 @@
     .line 166
     iget-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->h:Landroid/widget/EditText;
 
-    .line 167
-    if-eqz p1, :cond_ps
+    if-eqz p1, :cond_ps_prefill_a
 
-    .line 168
     invoke-static {p0}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
 
     move-result-object v1
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_ps
+    :cond_ps_prefill_a
     iget-object p1, p0, Lcom/myra/voice/ApiCloudSettingsActivity;->i:Landroid/widget/EditText;
 
-    if-eqz p1, :cond_ps2
+    if-eqz p1, :cond_ps_prefill_b
 
     invoke-static {p0}, LMd;->R(Landroid/content/Context;)Ljava/lang/String;
 
@@ -429,10 +418,9 @@
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    :cond_ps2
+    :cond_ps_prefill_b
+    .line 167
     .line 168
-    .line 169
-    .line 170
     const-string p1, "BlurrSettings"
 
     .line 169
@@ -501,7 +489,7 @@
 
     .line 200
     .line 201
-const v3, 0x49685e13
+    const v3, 0x49685e13
 
     .line 202
     .line 203
@@ -514,7 +502,6 @@ const v3, 0x49685e13
     if-eq v1, v3, :cond_ps3
 
     .line 206
-    .line 207
     goto :goto_0
 
     :cond_ps3
@@ -544,6 +531,7 @@ const v3, 0x49685e13
 
     throw v0
 
+    .line 207
     :cond_1
     invoke-virtual {p1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

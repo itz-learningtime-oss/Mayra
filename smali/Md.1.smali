@@ -4177,7 +4177,7 @@
 .end method
 
 .method public static P(Landroid/content/Context;)Ljava/lang/String;
-    .locals 2
+    .locals 8
 
     const-string v0, "context"
 
@@ -4195,15 +4195,27 @@
 
     invoke-virtual {v1, v0}, LqC;->b(Ljava/lang/String;)Ljava/util/ArrayList;
 
+    move-result-object v2
+
+    const/4 v5, 0x0
+
+    const/4 v6, 0x0
+
+    const-string v3, ","
+
+    const/4 v4, 0x0
+
+    const/16 v7, 0x3e
+
+    invoke-static/range {v2 .. v7}, Loy;->q0(Ljava/lang/Iterable;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Li40;I)Ljava/lang/String;
+
     move-result-object p0
 
-    invoke-static {p0}, Loy;->l0(Ljava/util/List;)Ljava/lang/Object;
+    invoke-static {p0}, LQa1;->P(Ljava/lang/CharSequence;)Z
 
-    move-result-object p0
+    move-result v0
 
-    check-cast p0, Ljava/lang/String;
-
-    if-nez p0, :cond_0
+    if-eqz v0, :cond_0
 
     const-string p0, ""
 

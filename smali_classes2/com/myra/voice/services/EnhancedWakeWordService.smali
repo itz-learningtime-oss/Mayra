@@ -546,7 +546,9 @@
 
     const-string v2, "com.myra.voice.STOP"
 
-    invoke-direct {v1, p0, p0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const-class v3, Lcom/myra/voice/services/EnhancedWakeWordService;
+
+    invoke-direct {v1, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     invoke-virtual {v1, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -564,7 +566,9 @@
 
     const-string v5, "com.myra.voice.PAUSE"
 
-    invoke-direct {v4, p0, p0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const-class v6, Lcom/myra/voice/services/EnhancedWakeWordService;
+
+    invoke-direct {v4, p0, v6}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     invoke-virtual {v4, v5}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
@@ -580,33 +584,35 @@
 
     new-instance v7, Landroid/content/Intent;
 
-    const-string v8, "com.myra.voice.RESUME"
+    const-string v2, "com.myra.voice.RESUME"
 
-    invoke-direct {v7, p0, p0}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
+    const-class v3, Lcom/myra/voice/services/EnhancedWakeWordService;
 
-    invoke-virtual {v7, v8}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+    invoke-direct {v7, p0, v3}, Landroid/content/Intent;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
-    const/4 v8, 0x3
+    invoke-virtual {v7, v2}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
-    const/high16 v9, 0x0c000000
+    const/4 v2, 0x3
 
-    invoke-static {p0, v8, v7, v9}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+    const/high16 v3, 0x0c000000
+
+    invoke-static {p0, v2, v7, v3}, Landroid/app/PendingIntent;->getService(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
 
     move-result-object v7
 
-    const v8, 0x7f0800d0
+    const v2, 0x7f0800d0
 
-    const-string v9, "Stop"
+    const-string v3, "Stop"
 
-    invoke-virtual {p2, v8, v9, v1}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
+    invoke-virtual {p2, v2, v3, v1}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
 
-    const-string v1, "Pause"
+    const-string v3, "Pause"
 
-    invoke-virtual {p2, v8, v1, v4}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
+    invoke-virtual {p2, v2, v3, v4}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
 
-    const-string v1, "Resume"
+    const-string v3, "Resume"
 
-    invoke-virtual {p2, v8, v1, v7}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
+    invoke-virtual {p2, v2, v3, v7}, LWD0;->a(ILjava/lang/String;Landroid/app/PendingIntent;)V
 
     .line 125
     const/4 p1, -0x1
@@ -782,6 +788,8 @@
     .line 205
     .line 206
     .line 207
+    const/4 v1, 0x0
+
     sput-boolean v1, Lcom/myra/voice/services/EnhancedWakeWordService;->c:Z
 
     .line 208

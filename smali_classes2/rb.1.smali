@@ -948,7 +948,7 @@
 .end method
 
 .method public static d(Landroid/content/Context;)V
-    .locals 6
+    .locals 7
 
     .line 1
     const-string v0, "context"
@@ -1039,6 +1039,21 @@
     .line 45
     .line 46
     .line 47
+    invoke-static {p0}, LMd;->P(Landroid/content/Context;)Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-static {v1}, Lrb;->c(Ljava/lang/String;)Ljava/util/ArrayList;
+
+    move-result-object v1
+
+    const-string v6, "poolside"
+
+    invoke-virtual {v0, v6, v1}, Ljava/util/concurrent/ConcurrentHashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    .line 48
+    .line 49
+    .line 50
     invoke-static {p0}, LMd;->X(Landroid/content/Context;)Ljava/lang/String;
 
     .line 48
@@ -1275,5 +1290,36 @@
     .line 157
     .line 158
     .line 159
+    const-string v6, "poolside"
+
+    sget-object p0, Lrb;->b:Ljava/util/concurrent/ConcurrentHashMap;
+
+    invoke-virtual {p0, v6}, Ljava/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object v0
+
+    if-nez v0, :cond_ps_a
+
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v0, v5}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>(I)V
+
+    invoke-virtual {p0, v6, v0}, Ljava/util/concurrent/ConcurrentHashMap;->putIfAbsent(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p0
+
+    if-nez p0, :cond_ps_b
+
+    goto :goto_ps
+
+    :cond_ps_b
+    move-object v0, p0
+
+    :cond_ps_a
+    :goto_ps
+    check-cast v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v0, v5}, Ljava/util/concurrent/atomic/AtomicInteger;->set(I)V
+
     return-void
 .end method
