@@ -1454,12 +1454,117 @@
     return-void
 
     .line 662
+    :pswitch_3
+    sget-object v2, LqC;->b:LGx;
+
+    invoke-virtual {v2, v1}, LGx;->l(Landroid/content/Context;)Landroid/content/SharedPreferences;
+
+    move-result-object v2
+
+    invoke-interface {v2}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
+
+    move-result-object v2
+
+    const-string v3, "keys_gemini"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v3, "keys_groq"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v3, "keys_deepseek"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v3, "keys_openrouter"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v3, "keys_poolside"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    const-string v3, "runtime_poolside_model"
+
+    invoke-interface {v2, v3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    invoke-interface {v2}, Landroid/content/SharedPreferences$Editor;->apply()V
+
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->a:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_a
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_a
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->b:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_b
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_b
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->c:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_c
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_c
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->d:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_d
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_d
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->h:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_h
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_h
+    iget-object v2, v1, Lcom/myra/voice/ApiCloudSettingsActivity;->i:Landroid/widget/EditText;
+
+    if-eqz v2, :ps_clear_i
+
+    const-string v3, ""
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    :ps_clear_i
+    invoke-static {v1}, Lrb;->d(Landroid/content/Context;)V
+
+    const-string v2, "All API keys cleared"
+
+    const/4 v3, 0x1
+
+    invoke-static {v1, v2, v3}, Landroid/widget/Toast;->makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+
+    move-result-object v2
+
+    invoke-virtual {v2}, Landroid/widget/Toast;->show()V
+
+    return-void
+
     nop
 
-    .line 663
     :pswitch_data_0
     .packed-switch 0x0
         :pswitch_1
         :pswitch_0
+        :pswitch_3
     .end packed-switch
 .end method

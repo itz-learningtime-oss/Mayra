@@ -2483,6 +2483,7 @@
     <public type="id" name="buttonCheckUpdates" id="0x7f0a0093" />
     <public type="id" name="buttonClearAll" id="0x7f0a0094" />
     <public type="id" name="buttonClearCache" id="0x7f0a0095" />
+    <public type="id" name="buttonClearApiKeys" id="0x7f0a0389" />
     <public type="id" name="buttonConfigureDeepResearch" id="0x7f0a0096" />
     <public type="id" name="buttonDelete" id="0x7f0a0097" />
     <public type="id" name="buttonEditProfile" id="0x7f0a0098" />

@@ -749,6 +749,22 @@
     invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 311
+    const p1, 0x7f0a0389
+
+    invoke-virtual {p0, p1}, Lyb;->findViewById(I)Landroid/view/View;
+
+    move-result-object p1
+
+    check-cast p1, Landroid/widget/TextView;
+
+    new-instance v0, Lcb;
+
+    const/4 v1, 0x3
+
+    invoke-direct {v0, p0, v1}, Lcb;-><init>(Lcom/myra/voice/ApiCloudSettingsActivity;I)V
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
     .line 312
     .line 313
     return-void

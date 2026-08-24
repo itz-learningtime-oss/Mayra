@@ -149,6 +149,7 @@
     <id name="buttonChangeHandle" />
     <id name="buttonCheckUpdates" />
     <id name="buttonClearAll" />
+    <id name="buttonClearApiKeys" />
     <id name="buttonClearCache" />
     <id name="buttonConfigureDeepResearch" />
     <id name="buttonDelete" />
